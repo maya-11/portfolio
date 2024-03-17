@@ -1,12 +1,27 @@
 :root {
-    --branding-color: #800080;
-    --secondary-color: #f9f7fe;
+    --branding-color: #6A5ACD;
+    /* Deep blue branding color */
+    --secondary-color: #9370DB;
+    /* Light purple secondary color */
     --heading-font-family: "Playfair Display", serif;
+    /* Heading font family */
     --default-font-family: "Poppins", sans-serif;
+    /* Default font family */
+    --text-gradient-start: #F5F5DC;
+    /* Start color for text gradient */
+    --text-gradient-end: #EEE8AA;
+    /* End color for text gradient */
+    --hover-color: #FDF5E6;
+    /* Cream hover color */
+    --active-hover-color: #84ffef;
+    /* Turquoise hover color for active class */
 }
 
 body {
     font-family: var(--default-font-family);
+    /* Set default font family */
+    background-image: linear-gradient(to bottom right, #483D8B, #053cb3);
+    /* Dark purple mixed with light blue gradient */
 }
 
 h1,
@@ -15,37 +30,31 @@ h3,
 h4,
 h5,
 h6 {
-    color: black;
+    background-image: linear-gradient(to right, var(--text-gradient-start), var(--text-gradient-end));
+    /* Text gradient background */
+    -webkit-background-clip: text;
+    /* Apply text gradient */
+    color: transparent;
+    /* Hide text */
     font-family: var(--heading-font-family);
+    /* Use heading font family */
     font-weight: bold;
-}
-
-h1 {
-    font-size: 96px;
-    line-height: 1.5;
-}
-
-h2 {
-    font-size: 64px;
-}
-
-p {
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 30px;
+    /* Bold font weight for headings */
 }
 
 .hero {
-    background: var(--secondary-color);
+    background-image: linear-gradient(to bottom right, #9370DB, #87CEFA);
+    /* Light purple mixed with light blue */
     text-align: center;
-    padding: 160px 20px;
+    padding: 80px 20px;
 }
 
 .hero p {
     font-size: 36px;
     font-weight: bold;
     margin: 0;
-    color: #272142;
+    color: var(--text-color);
+    /* Change hero text color to default */
 }
 
 .hero h2 {
@@ -53,10 +62,13 @@ p {
     font-weight: normal;
     line-height: 1.5;
     font-size: 24px;
+    color: var(--text-color);
+    /* Change hero text color to default */
 }
 
-.btn-branding {
-    background: var(--branding-color);
+.btn-branding,
+.btn-branding-outline {
+    background: var(--secondary-color);
     border-radius: 4px;
     color: white;
     font-size: 18px;
@@ -64,31 +76,104 @@ p {
     padding: 15px 30px;
 }
 
-.btn-branding-outline {
-    color: var(--branding-color);
-    border: 1px solid var(--branding-color);
-    border-radius: 4px;
-    font-size: 18px;
-    line-height: 27px;
-    padding: 15px 30px;
+.btn-branding-outline:hover {
+    background: var(--active-hover-color);
+    color: var(--secondary-color);
+    
 }
 
 .project-desciption {
     padding: 120px 60px;
+    
+}
+
+.logo {
+    max-height: 40px;
+}
+
+nav {
+    padding: 20px 0;
+}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    display: inline;
+    list-style: none;
+    line-height: 42px;
+    margin-left: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #87CEFA;
+    transition: all 100ms ease-in-out;
+}
+
+nav a:hover,
+nav li.active a {
+    color: var(--active-hover-color);
+}
+
+footer {
+    margin: 60px 0;
+}
+
+footer .contact-box {
+    background: var(--branding-color);
+    padding: 30px 120px;
+    border-radius: 10px;
+}
+
+footer .contact-box p {
+    margin: 0;
+}
+
+footer .email-link {
+    text-decoration: none;
+    color: black;
+    font-size: 24px;
+}
+
+footer .email-link:hover {
+    color: var(--active-hover-color);
+}
+
+footer .social-links a {
+    margin: 0 20px;
+    color: var(--branding-color);
+    background: var(--secondary-color);
+    padding: 10px 14px;
+    border-radius: 50%;
+    font-size: 18px;
+    transition: all 100ms ease-in-out;
+}
+
+footer .social-links a:hover {
+    color: white;
+    background: var(--active-hover-color);
 }
 
 @media (max-width: 900px) {
     h1 {
         font-size: 44px;
-        line-height: 2;
+        line-height: 1.5;
     }
 
     h2 {
         font-size: 44px;
     }
 
-    .hero {
-        padding: 80px 20px;
+    h3 {
+        font-size: 26px;
+    }
+
+    .content {
+        text-align: center;
+        padding: 0;
     }
 
     .project-desciption {
